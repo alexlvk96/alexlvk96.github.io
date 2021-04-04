@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021 Frontend Dev</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo" href="#">Alexandru-Gabriel <span>Romanet</span></a>
+            
+            <!-- HAMBURGER -->
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open navigation">
+
+            <!-- NAV -->
+            <nav>
+                <!-- MAIN NAV -->
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close navigation">
+                
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Bio</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+
+                <!-- SECONDARY NAV -->
+                <ul class="secondary-nav">
+                    <li class="contact-cta"><a href="#">Contact me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="left-col">
+                <p class="subhead">Welcome to...</p>
+
+                <h1>Not your ordinary</h1>
+                <div class="carousel">
+                    <h2 class="carousel-item">System Engineer</h1>
+                    <h2 class="carousel-item">Software Engineer</h1>
+                    <h2 class="carousel-item">Software Developer</h1>
+                    <h2 class="carousel-item">Front-end Developer</h1>
+                    <h2 class="carousel-item">Back-end Developer</h1>
+                    <h2 class="carousel-item">*ran out of ideas*</h1>
+                </div>
+            </div>
+                
+            <!-- CONTACT  -->
+            <div class="hero-cta">
+                <img class="contact-img" src="images/resume.svg" alt="Resume">
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <!-- SKILLS -->
+        <div class="container">
+            <ul class="features-list">
+                <li>ASP.NET CORE</li>
+                <li>WPF.NET CORE</li>
+                <li>C#/C++/C</li>
+                <li>React</li>
+                <li>JQuery</li>
+                <li>JavaScript</li>
+                <li>M-SQL</li>
+                <li>HTML, SCSS &amp; CSS</li>
+            </ul>
+
+            <img src="images/skills.svg" alt="Skills" class="skills-img">
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="images/project.png" alt="Project">
+                    <blockquote>First project</blockquote>
+                    <cite>Company</cite>
+                </li>
+                <li>
+                    <img src="images/project.png" alt="Project">
+                    <blockquote>First project</blockquote>
+                    <cite>Company</cite>
+                </li>
+                <li>
+                    <img src="images/project.png" alt="Project">
+                    <blockquote>First project</blockquote>
+                    <cite>Company</cite>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-left">
+                <img src="images/contact.svg" class="letter-image" alt="Contact">
+            </div>
+
+            <div class="contact-right">
+                <h2>Contact</h2>
+                <form action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                    <input type="submit" class="send-message-cta" value="Send message">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &#169;  Alexandru-Gabriel Romanet 
+    </footer>
+
+    <script>
+        // carousel
+        var myIndex = 0;
+        carousel();
+    
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("carousel-item");
+    
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+    
+          myIndex++;
+    
+          if (myIndex > x.length) {myIndex = 1}  
+    
+          x[myIndex-1].style.display = "block"; 
+    
+          setTimeout(carousel, 1000);    
+        }
+
+        // navigation
+        const mobileBtn = document.getElementById('mobile-cta');
+        const nav = document.querySelector('nav');
+        const mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+
+</body>
+</html>
+
